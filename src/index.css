@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f1c;
+  color: #e0f7ff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 100px 10%;
+  position: relative;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #00f5ff;
+  text-shadow: 0 0 10px #00f5ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.glass-card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 30px;
+  transition: 0.4s ease;
+}
+
+.glass-card:hover {
+  box-shadow: 0 0 20px #00f5ff;
+  transform: translateY(-6px);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#00f5ff22 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
