@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 
 * {
   margin: 0;
@@ -6,50 +6,184 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #0a0f1c;
-  color: #e0f7ff;
-  font-family: 'Orbitron', sans-serif;
-  overflow-x: hidden;
-}
-
-.section {
-  padding: 100px 10%;
-  position: relative;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 50px;
-  text-align: center;
-  color: #00f5ff;
-  text-shadow: 0 0 10px #00f5ff;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #e6faff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ---------------- BACKGROUND ---------------- */
+
+.background-image {
+  position: fixed;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -3;
+  filter: brightness(0.75); 
+  filter: blur(20);
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 20, 30, 0.5);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(0,255,255,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #dff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00f7ff;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+/* ---------------- HEADINGS ---------------- */
+
+h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.hero {
+  padding-top: 160px;
+}
+
+.hero h1 {
+  text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 20px;
+  opacity: 0.85;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+/* ---------------- GLASS CARDS ---------------- */
+
 .glass-card {
-  background: rgba(0, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 30px;
+  background: rgba(10, 25, 35, 0.55);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(22px);
+  border-radius: 18px;
+  padding: 35px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   transition: 0.4s ease;
 }
 
 .glass-card:hover {
-  box-shadow: 0 0 20px #00f5ff;
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 0 40px rgba(0,255,255,0.2);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(#00f5ff22 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index: -1;
+/* ---------------- GRIDS ---------------- */
+
+.skills-grid,
+.stats-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* ---------------- PROJECT BUTTON ---------------- */
+
+.project-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 22px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #00f7ff;
+  background: rgba(0,255,255,0.08);
+  border: 1px solid rgba(0,255,255,0.4);
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background: rgba(0,255,255,0.25);
+  transform: translateY(-2px);
+}
+
+
+/* ---------------- RESUME BUTTON ---------------- */
+
+.resume-top-btn {
+  margin-top: 25px;
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #00f7ff;
+  border: 1px solid rgba(0,255,255,0.4);
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.resume-top-btn:hover {
+  background: rgba(0,255,255,0.3);
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer {
+  padding: 40px;
+  text-align: center;
+  opacity: 0.6;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.connect-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

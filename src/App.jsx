@@ -1,25 +1,33 @@
-import { lazy, Suspense } from "react";
+import Navbar from "./components/Navbar";
+import ParticlesBg from "./components/ParticlesBg";
 import Hero from "./components/Hero";
+import About from "./components/About";
 import Skills from "./components/Skills";
 import Stats from "./components/Stats";
 import Timeline from "./components/Timeline";
+import Github from "./components/Github";
+import Connect from "./components/Connect";
 import Footer from "./components/Footer";
 
-const Projects = lazy(() => import("./components/Projects"));
-
-export default function App() {
+function App() {
   return (
     <>
-      <Hero />
-      <Skills />
-      <Stats />
-      <Timeline />
+      <ParticlesBg />
+      <Navbar />
 
-      <Suspense fallback={<div style={{ textAlign: "center" }}>Loading Projects...</div>}>
-        <Projects />
-      </Suspense>
+      <main className="main-content">
+        <Hero />
+        <About />
+        <Skills />
+        <Stats />
+        <Timeline />
+        <Github />
+        <Connect />
+      </main>
 
       <Footer />
     </>
   );
 }
+
+export default App;

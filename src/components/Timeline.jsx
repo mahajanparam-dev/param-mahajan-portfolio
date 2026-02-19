@@ -1,27 +1,45 @@
-import { timeline } from "../data/timeline";
-import { motion } from "framer-motion";
-
-export default function Timeline() {
+const Timeline = () => {
   return (
     <section id="timeline" className="section">
       <h2>Engineering Journey</h2>
-      <div style={{ maxWidth: "800px", margin: "auto" }}>
-        {timeline.map((item, index) => (
-          <motion.div
-            key={index}
-            className="glass-card"
-            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            style={{ marginBottom: "30px" }}
-          >
-            <h3 style={{ color: "#00f5ff" }}>{item.year}</h3>
-            <h4>{item.title}</h4>
-            <p>{item.description}</p>
-          </motion.div>
-        ))}
+
+      <div className="skills-grid">
+
+        <div className="glass-card">
+          <h3>Foundation</h3>
+          <p>
+            Began deep exploration of electronics, digital logic,
+            and embedded system fundamentals.
+          </p>
+        </div>
+
+        <div className="glass-card">
+          <h3>System-Level Thinking</h3>
+          <p>
+            Transitioned from component-level understanding
+            to full system architecture design.
+          </p>
+        </div>
+
+        <div className="glass-card">
+          <h3>Hardware × Software Integration</h3>
+          <p>
+            Bridging firmware, operating systems,
+            and scalable web technologies.
+          </p>
+        </div>
+
+        <div className="glass-card">
+          <h3>Future Direction</h3>
+          <p>
+            Focused on VLSI design, secure architecture,
+            and silicon-level innovation.
+          </p>
+        </div>
+
       </div>
     </section>
   );
-}
+};
+
+export default Timeline;
