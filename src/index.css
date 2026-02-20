@@ -80,22 +80,17 @@ body {
 /* 🔥 MOBILE STYLES */
 @media (max-width: 768px) {
 
-  .links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding: 25px 0;
-    display: none;
-  }
+ .links {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: 0.3s ease;
+}
 
-  .links.active {
-    display: flex;
-  }
+.links.active {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
 
   .hamburger {
     display: block;
