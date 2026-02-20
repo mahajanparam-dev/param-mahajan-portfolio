@@ -36,33 +36,69 @@ body {
 
 .navbar {
   position: fixed;
-  width: 100%;
   top: 0;
-  padding: 20px 10%;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 20, 30, 0.5);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(0,255,255,0.1);
+  padding: 15px 8%;
   z-index: 1000;
 }
 
 .logo {
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
 }
 
-.nav-links a {
-  margin-left: 25px;
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+.links a {
   text-decoration: none;
-  color: #dff;
-  font-weight: 500;
+  color: white;
+  font-size: 0.95rem;
   transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #00f7ff;
+.links a:hover {
+  color: #00f5ff;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* 🔥 MOBILE STYLES */
+@media (max-width: 768px) {
+
+  .links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+    display: none;
+  }
+
+  .links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 /* ---------------- SECTIONS ---------------- */
